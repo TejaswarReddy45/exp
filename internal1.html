@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Student Marks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            position: relative;
+            padding: 20px;
+            background-color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 6px;
+            left: 7px;
+            background: none;
+            border: 2px solid red;
+            border-radius: 4px;
+            padding: 5px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .back-button:hover {
+            color: #007bff;
+            border-color: #0056b3;
+        }
+
+        .refresh-button {
+            background-color: #808080;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .refresh-button:hover {
+            background-color: #3e8e41;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            background-color: #EAEEE9;
+        }
+
+        th {
+            background-color: #FFFF00;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 95%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 5px 9px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+        }
+
+        hr {
+            border: 15px solid #FFFFFF;
+            border-top: solid #FFFFFF;
+            width: 100%;
+            background-color: #FFFFFF;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="goBack()">x</button>
+       
+        <h1>Student Marks:</h1>
+        <form id="marksForm" action="internal1.php" method="post">
+            <table>
+                <tr>
+                    <td>Student ID:</td>
+                    <td>
+                        <input type="text" name="student_id" required id="student_id" maxlength="12" placeholder="22352-CM-045">
+                        <div id="id_error" class="error-message"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Semester:</td>
+                    <td>
+                        <select name="semester" id="semester" required>
+                            <option value="">Select Semester</option>
+                            <option value="I">I</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
+                            <option value="VI">VI</option>
+                        </select>
+                        <div id="semester_error" class="error-message"></div>
+                    </td>
+                </tr>
+            </table>
+            
+            <table>
+                <tr>
+                    <th>Subjects:</th>
+                    <th>MARKS:</th>
+                </tr>
+                <tr>
+                    <td>SUBJECT 1:</td>
+                    <td><input type="number" name="sub1" required id="sub1" min="0" max="20"></td>
+                </tr>
+                <tr>
+                    <td>SUBJECT 2:</td>
+                    <td><input type="number" name="sub2" required id="sub2" min="0" max="20"></td>
+                </tr>
+                <tr>
+                    <td>SUBJECT 3:</td>
+                    <td><input type="number" name="sub3" required id="sub3" min="0" max="20"></td>
+                </tr>
+                <tr>
+                    <td>SUBJECT 4:</td>
+                    <td><input type="number" name="sub4" required id="sub4" min="0" max="20"></td>
+                </tr>
+                <tr>
+                    <td>SUBJECT 5:</td>
+                    <td><input type="number" name="sub5" required id="sub5" min="0" max="20"></td>
+                </tr>
+                <tr>
+                    <td>SUBJECT 6:</td>
+                    <td><input type="number" name="sub6" required id="sub6" min="0" max="20"></td>
+                </tr>
+                <tr>
+                    <td>SUBJECT 7:</td>
+                    <td><input type="number" name="sub7" required id="sub7" min="0" max="20"></td>
+                </tr>
+                <tr>
+                    <td>SUBJECT 8:</td>
+                    <td><input type="number" name="sub8" required id="sub8" min="0" max="20"></td>
+                </tr>
+                <tr>
+                    <td>SUBJECT 9:</td>
+                    <td><input type="number" name="sub9" required id="sub9" min="0" max="20"></td>
+                </tr>
+                <tr>
+                    <td>SUBJECT 10:</td>
+                    <td><input type="number" name="sub10" required id="sub10" min="0" max="20"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="submit-button"><input type="submit" value="Submit Marks"></td>
+                </tr>
+            </table>
+        </form>
+        <button class="refresh-button" type="button" onclick="location.reload()">Refresh</button>
+    </div>
+      <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        // Form validation logic
+        document.getElementById('marksForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            if (validateMarks()) {
+                this.submit(); // Submit the form if validation passes
+            }
+        };
+
+        function validateMarks() {
+            var isValid = true;
+
+            // Validate Student ID
+            var studentId = document.getElementById("student_id").value;
+            var idError = document.getElementById("id_error");
+            var idPattern = /^\d{5}-[A-Z]{2}-\d{3}$/;
+
+            if (!idPattern.test(studentId)) {
+                idError.textContent = "ID must be in format 22352-CM-045.";
+                isValid = false;
+            } else {
+                idError.textContent = "";
+            }
+
+            // Validate Semester
+            var semester = document.getElementById("semester").value;
+            var semesterError = document.getElementById("semester_error");
+
+            if (semester === "") {
+                semesterError.textContent = "Please select a semester.";
+                isValid = false;
+            } else {
+                semesterError.textContent = "";
+            }
+
+            return isValid; // Return validation status
+        }
+    </script>
+
+</body>
+</html>
+

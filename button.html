@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style for the buttons */
+        .select-button, .back-button {
+            background-color: #0074D9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .back-button {
+            background-color: #FF4136;
+        }
+
+        /* Style for the container */
+        .container {
+            text-align: center;
+            margin: 50px auto;
+            width: 50%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for the select dropdown */
+        .semester-select, .branch-select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px;
+        }
+    </style>
+<script>
+    // Function to handle select button click
+    function goToMarksInsertionPage() {
+        const semester = document.getElementById("semester").value;
+        const branch = document.getElementById("branch").value;
+        const marksType = document.querySelector('input[name="options"]:checked').value;
+
+        if (semester && branch && marksType) {
+            // Replace with actual URLs for each semester, branch, and marks type
+            const urls = {
+                "I-CME-option1": 'external1.html',
+                "I-CME-option2": 'internal1.html',
+                "I-ECE-option1": 'external1.html',
+                "I-ECE-option2": 'internal1.html',
+                "I-EEE-option1": 'external1.html',
+                "I-EEE-option2": 'internal1.html',
+                "I-Mech-option1": 'external1.html',
+                "I-Mech-option2": 'internal1.html',
+                "III-CME-option1": 'external2.html',
+                "III-CME-option2": 'internal2.html',
+                "III-ECE-option1": 'external.html',
+                "III-ECE-option2": 'internal.html',
+                "III-EEE-option1": 'external.html',
+                "III-EEE-option2": 'internal.html',
+                "III-Mech-option1": 'external.html',
+                "III-Mech-option2": 'internal.html',
+                "IV-CME-option1": 'external2.html',
+                "IV-CME-option2": 'internal2.html',
+                "IV-ECE-option1": 'external1.html',
+                "IV-ECE-option2": 'internal1.html',
+                "IV-EEE-option1": 'external1.html',
+                "IV-EEE-option2": 'internal1.html',
+                "IV-Mech-option1": 'external.html',
+                "IV-Mech-option2": 'internal.html',
+                "V-CME-option1": 'external2.html',
+                "V-CME-option2": 'internal2.html',
+                "V-ECE-option1": 'external2.html',
+                "V-ECE-option2": 'internal2.html',
+                "V-EEE-option1": 'external2.html',
+                "V-EEE-option2": 'internal2.html',
+                "V-Mech-option1": 'external.html',
+                "V-Mech-option2": 'internal.html',
+                "VI-CME-option1": 'external13.html',
+                "VI-CME-option2": 'internal13.html',
+                "VI-ECE-option1": 'external13.html',
+                "VI-ECE-option2": 'internal13.html',
+                "VI-EEE-option1": 'external13.html',
+                "VI-EEE-option2": 'internal13.html',
+                "VI-Mech-option1": 'external3.html',
+                "VI-Mech-option2": 'internal3.html'
+            };
+            const url = urls[semester + "-" + branch + "-" + marksType];
+            if (url) {
+                window.location.href = url;
+            } else {
+                alert("Invalid semester, branch, or marks type selection");
+            }
+        } else {
+            alert("Please select semester, branch, and marks type");
+        }
+    }
+
+    // Function to handle back button click
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</head>
+<body>
+    <!-- Container to center the content -->
+    <div class="container">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>BRANCH:</p>
+                        <select class="branch-select" id="branch">
+                            <option value="">Select Branch</option>
+                            <option value="CME">CME</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="Mech">Mech</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>SEMESTER:</p>
+                        <select class="semester-select" id="semester">
+                            <option value="">Select Semester</option>
+                            <option value="I">I</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
+                            <option value="VI">VI</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>SELECT MARKS TYPE:</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" id="option1" name="options" value="option1">
+                        <label for="option1">EXTERNAL MARKS</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" id="option2" name="options" value="option2">
+                        <label for="option2">INTERNAL MARKS</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- Select button -->
+                        <button class="select-button" onclick="goToMarksInsertionPage()">Select</button>
+                        <!-- Back button -->
+                        <button class="back-button" onclick="goBack()">Back</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

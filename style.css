@@ -1,0 +1,123 @@
+
+.search-button {
+  background-color: #337ab7; /* blue background color */
+  color: #fff; /* white text color */
+  border: none; /* remove border */
+  padding: 10px 10px; /* add some padding */
+  font-size: 16px; /* increase font size */
+  cursor: pointer; /* change cursor to pointer on hover */
+  border-radius: 5px; /* add some rounded corners */
+}
+/* Add a background image to the page */
+body {
+  background-image:url(); 
+    object-fit: cover;
+
+  background-position: center;
+  height: 100vh;
+  margin: 45px;
+}
+
+/* Style the marks table */
+.marks-table {
+  width: 90px; /* adjust the width to your liking */
+  margin: 70px ; /* center the table horizontally */
+  border-collapse: collapse;
+  border: 80px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.marks-table th, .marks-table td {
+  border: 20px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.marks-table th {
+  background-color: #E5E5EA;
+}
+
+.marks-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Center the table vertically */
+.search-button:hover {
+  background-color: #23527c; /* darker blue background color on hover */
+}
+
+.search-button:active {
+  background-color: #1e3d5f; /* even darker blue background color on active */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add some box shadow on active */
+}
+/* Style the marks table */
+.marks-table {
+  border-collapse: collapse;
+  width: 100px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.marks-table th {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.marks-table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.marks-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.marks-table tr:hover {
+  background-color: #e5e5e5;
+}
+
+/* Style the student ID row */
+.marks-table .student-id {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #337ab7;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the subject rows */
+.marks-table .subject-row {
+  background-color: #f7f7f7;
+  padding: 10px;
+  text-align: left;
+}
+
+.marks-table .subject-row td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style the marks columns */
+.marks-table .marks {
+  font-size: 18px;
+  font-weight: bold;
+  color: #337ab7;
+}
+
+/* Add some space between the search input and the marks table */
+.search-container {
+  margin-bottom: 20px;
+}
+
+/* Add some padding to the marks container */
+.marks-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

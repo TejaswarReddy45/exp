@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retrieve Marks</title>
+</head>
+<body>
+    <h1>Retrieve Marks</h1>
+    <form action="get.php" method="post">
+        <label for="student_id">Student ID:</label>
+        <input type="text" id="student_id" name="student_id" required><br><br>
+
+        <label for="semester">Semester:</label>
+        <select id="semester" name="semester" required>
+              <option value="I">I</option>
+<option value="III">III</option>
+<option value="IV">IV</option>
+<option value="V">V</option>
+<option value="VI">VI</option>
+       </select><br><br>
+
+        <label for="marks_type">Marks Type:</label>
+        <select id="marks_type" name="marks_type" required>
+            <option value="external">External</option>
+            <option value="internal">Internal</option>
+        </select><br><br>
+
+        <input type="submit" value="Retrieve Marks">
+    </form>
+</body>
+</html>

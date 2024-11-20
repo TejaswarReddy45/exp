@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Student Marks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            position: relative;
+            padding: 20px;
+            background-color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 6px;
+            left: 7px;
+            background: none;
+            border: 2px solid red;
+            border-radius: 4px;
+            padding: 5px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .back-button:hover {
+            color: #007bff;
+            border-color: #0056b3;
+        }
+
+        .refresh-button {
+            background-color: #808080;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .refresh-button:hover {
+            background-color: #3e8e41;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            background-color: #EAEEE9;
+        }
+
+        th {
+            background-color: #FFFF00;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 95%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 5px 9px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+        }
+
+        hr {
+            border: 15px solid #FFFFFF;
+            border-top: solid #FFFFFF;
+            width: 100%;
+            background-color: #FFFFFF;
+        }
+
+        .error {
+            border: 1px solid red;
+            background-color: #FFC0C0;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="goBack()">x</button>
+       
+        <h1>Student Marks:</h1>
+        <form id="marksForm" action="external.php" method="post">
+            <table>
+                <tr>
+                    <td><label for="student_id">Student ID:</label></td>
+                    <td>
+                        <input type="text" name="student_id" required id="student_id" maxlength="12" placeholder="22352-CM-045">
+                        <div id="id_error" class="error-message"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="semester">Semester:</label></td>
+                    <td>
+                        <select name="semester" id="semester" required>
+                            <option value="">Select Semester</option>
+                            <option value="I">I</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
+                            <option value="VI">VI</option>
+                        </select>
+                        <div id="semester_error" class="error-message"></div>
+                    </td>
+                </tr>
+            </table>
+            
+            <table>
+                <tr>
+                    <th>Subjects:</th>
+                    <th>MARKS:</th>
+                </tr>
+                <tr>
+                    <td><label for="sub1">SUBJECT 1:</label></td>
+                    <td><input type="number" name="sub1" required id="sub1" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub2">SUBJECT 2:</label></td>
+                    <td><input type="number" name="sub2" required id="sub2" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub3">SUBJECT 3:</label></td>
+                    <td><input type="number" name="sub3" required id="sub3" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub4">SUBJECT 4:</label></td>
+                    <td><input type="number" name="sub4" required id="sub4" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub5">SUBJECT 5:</label></td>
+                    <td><input type="number" name="sub5" required id="sub5" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub6">SUBJECT 6:</label></td>
+                    <td><input type="number" name="sub6" required id="sub6" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub7">SUBJECT 7:</label></td>
+                    <td><input type="number" name="sub7" required id="sub7" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub8">SUBJECT 8:</label></td>
+                    <td><input type="number" name="sub8" required id="sub8" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub9">SUBJECT 9:</label></td>
+                    <td><input type="number" name="sub9" required id="sub9" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub10">SUBJECT 10:</label></td>
+                    <td><input type="number" name="sub10" required id="sub10" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub11">SUBJECT 11:</label></td>
+                    <td><input type="number" name="sub11" required id="sub11" min="0" max="80"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="submit-button"><input type="submit" value="Submit Marks"></td>
+                </tr>
+            </table>
+        </form>
+        <button class="refresh-button" type="button" onclick="location.reload()">Refresh</button>
+        <div id="success_message" class="success-message"></div>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        document.getElementById('marksForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            if (validateMarks()) {
+                // If validation is successful, display the success message
+                document.getElementById('success_message').textContent = "Marks submitted successfully!";
+                document.getElementById('success_message').style.display = "block";
+                // Optionally, you can perform AJAX submission here if needed
+                this.submit(); // Proceed with form submission
+            }
+        };
+
+        function validateMarks() {
+            var isValid = true;
+
+            // Validate Student ID
+            var studentId = document.getElementById("student_id").value;
+            var idError = document.getElementById("id_error");
+            var idPattern = /^\d{5}-[A-Z]{2}-\d{3}$/;
+
+            if (!idPattern.test(studentId)) {
+                idError.textContent = "ID not registered. Must be in format 22352-CM-045 where 22352 is a 5-digit number, CM is a 2-letter branch code, and 045 is a 3-digit student ID.";
+                isValid = false;
+            } else {
+                var parts = studentId.split('-');
+                var collegeCode = parts[0]; // 5-digit college code and year
+                var branchCode = parts[1]; // 2-letter branch code
+                var rollNumber = parts[2]; // 3-digit roll number
+
+                // Validate college code
+                if (isNaN(collegeCode) || collegeCode.length !== 5) {
+                    idError.textContent = "ID not registered. College code must be exactly 5 digits.";
+                    isValid = false;
+                } else if (!branchCode.match(/^[A-Z]{2}$/)) {
+                    idError.textContent = "ID not registered. Branch code must be exactly 2 uppercase letters.";
+                    isValid = false;
+                } else if (rollNumber.length !== 3 || isNaN(rollNumber)) {
+                    idError.textContent = "ID not registered. Roll number must be exactly 3 digits.";
+                    isValid = false;
+                } else {
+                    idError.textContent = "";
+                }
+            }
+
+            // Validate Semester
+            var semester = document.getElementById("semester").value;
+            var semesterError = document.getElementById("semester_error");
+
+            if (semester === "") {
+                semesterError.textContent = "Please select a semester.";
+                isValid = false;
+            } else {
+                semesterError.textContent = "";
+            }
+
+            return isValid; // Return the validation result
+        }
+    </script>
+</body>
+</html>

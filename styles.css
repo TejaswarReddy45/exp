@@ -1,0 +1,253 @@
+/* style.css */
+
+/* General table styles */
+table {
+    border-collapse: separate; /* change from collapse to separate */
+    border-spacing: 0; /* add border spacing to create gap between cells */
+    width: 80%;
+    align: center;
+}
+
+th, td {
+    border: 1px solid #000; /* reduce border width to 1px */
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    border: 1px solid #000; /* reduce border width to 1px */
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th:first-child {
+    width: 30%; /* adjust width for Student ID column */
+}
+
+/* Centering container for the table */
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* set the height to 100% of the viewport */
+    width: 100vw; /* set the width to 100% of the viewport */
+}
+
+/* Reset table styles to avoid conflicts */
+.table-container table {
+    display: table; /* reset table display */
+    margin: 0 auto; /* center table horizontally */
+}
+
+/* Styles for specific tables */
+.centered-table {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.result-column {
+    width: 50px;
+}
+
+.marks-table {
+    width: 90px; /* adjust the width to your liking */
+    margin: 70px; /* center the table horizontally */
+    border-collapse: collapse;
+    border: 80px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.marks-table th, .marks-table td {
+    border: 20px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.marks-table th {
+    background-color: #E5E5EA;
+}
+
+.marks-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style the search button */
+.search-button:hover {
+    background-color: #23527c; /* darker blue background color on hover */
+}
+
+.search-button:active {
+    background-color: #1e3d5f; /* even darker blue background color on active */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add some box shadow on active */
+}
+
+/* Style the student ID row */
+.marks-table .student-id {
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #337ab7;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style the subject rows */
+.marks-table .subject-row {
+    background-color: #f7f7f7;
+    padding: 10px;
+    text-align: left;
+}
+
+.marks-table .subject-row td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style the marks columns */
+.marks-table .marks {
+    font-size: 18px;
+    font-weight: bold;
+    color: #337ab7;
+}
+
+/* Add some space between the search input and the marks table */
+.search-container {
+    margin-bottom: 20px;
+}
+
+/* Add some padding to the marks container */
+.marks-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            position: relative;
+            padding: 20px;
+            background-color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 6px;
+            left: 7px;
+            background: none;
+            border: 2px solid red;
+            border-radius: 4px;
+            padding: 5px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .back-button:hover {
+            color: #007bff;
+            border-color: #0056b3;
+        }
+
+        .refresh-button {
+            background-color: #808080;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .refresh-button:hover {
+            background-color: #3e8e41;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            background-color: #EAEEE9;
+        }
+
+        th {
+            background-color: #FFFF00;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 95%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 5px 9px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+        }
+
+        hr {
+            border: 15px solid #FFFFFF;
+            border-top: solid #FFFFFF;
+            width: 100%;
+            background-color: #FFFFFF;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+/* Additional styles (if needed) */
+/* ... rest of the CSS remains the same ... */

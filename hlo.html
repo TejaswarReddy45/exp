@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+html, body {
+  width: 100%;
+  height:100%;
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            position: relative;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .menu-item:hover {
+            background-color: #45a049;
+            cursor: pointer;
+        }
+
+        .submenu,
+        .branch-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            background-color: #4CAF50;
+            border-radius: 4px;
+        }
+
+        .submenu li,
+        .branch-menu li {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .submenu li:last-child,
+        .branch-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .submenu a,
+        .branch-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .submenu a:hover,
+        .branch-menu a:hover {
+            background-color: #45a049;
+        }
+
+        /* Show the submenu when the parent menu item is hovered */
+        .submenu-item:hover .submenu {
+            display: block;
+        }
+
+        .submenu-item .submenu li:hover .branch-menu {
+            display: block;
+            left: 100%;
+            top: 0;
+        }
+
+        .submenu-item {
+            position: relative;
+        }
+
+        .submenu-item .submenu li {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to the Student Portal</h1>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li class="submenu-item">
+                <a href="#" class="menu-item">Results</a>
+                <ul class="submenu">
+                    <li>
+                        <a href="#">Semester I</a>
+                        <ul class="branch-menu">
+                            <li><a href="sem1.html">CME</a></li>
+                            <li><a href="sem1.html">ECE</a></li>
+                            <li><a href="sem1.html">EEE</a></li>
+                            <li><a href="sem1.html">MECH</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Semester III</a>
+                        <ul class="branch-menu">
+                            <li><a href="sem2.html">CME</a></li>
+                            <li><a href="sem1.html">ECE</a></li>
+                            <li><a href="sem1.html">EEE</a></li>
+                            <li><a href="sem3.html">MECH</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Semester IV</a>
+                        <ul class="branch-menu">
+                            <li><a href="sem2.html">CME</a></li>
+                            <li><a href="sem2.html">ECE</a></li>
+                            <li><a href="sem2.html">EEE</a></li>
+                            <li><a href="sem3.html">MECH</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Semester V</a>
+                        <ul class="branch-menu">
+                            <li><a href="sem2.html">CME</a></li>
+                            <li><a href="sem2.html">ECE</a></li>
+                            <li><a href="sem2.html">EEE</a></li>
+                            <li><a href="sem3.html">MECH</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Semester VI</a>
+                        <ul class="branch-menu">
+                            <li><a href="sem4.html">CME</a></li>
+                            <li><a href="sem4.html">ECE</a></li>
+                            <li><a href="sem4">EEE</a></li>
+                            <li><a href="sem4.html">MECH</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
